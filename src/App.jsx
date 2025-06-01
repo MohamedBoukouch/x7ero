@@ -1,160 +1,245 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { games } from './gamesData';
-import { TiArrowSortedDown } from "react-icons/ti";
+import { TiArrowSortedDown, TiStarFullOutline } from "react-icons/ti";
+import { FaGamepad, FaSearch } from "react-icons/fa";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [filteredGames, setFilteredGames] = useState(games);
+  const [showSearchResults, setShowSearchResults] = useState(false);
   const navigate = useNavigate();
-
-  const filteredGames = games.filter(game =>
-    game.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
   const featuredGame = games[0];
   const popularGames = games.slice(0, 8);
 
+  // Enhanced search function
+  useEffect(() => {
+    if (searchTerm.trim() === '') {
+      setFilteredGames(games);
+      setShowSearchResults(false);
+    } else {
+      const results = games.filter(game =>
+        game.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        game.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        game.category.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredGames(results);
+      setShowSearchResults(true);
+    }
+  }, [searchTerm]);
+
   return (
-<div className="min-h-screen bg-gradient-to-b from-purple-800 via-pink-600 to-blue-800 text-white p-4">
+    <div className="min-h-screen bg-gradient-to-b from-purple-900 via-indigo-900 to-blue-900 text-white p-4">
       {/* Header */}
       <header className="flex flex-col items-center mb-8">
-        <h1 className="text-5xl font-bold text-white mb-2">x7ero</h1>
-        <p className="text-xl text-amber-200 mb-6">Fun Games for Everyone!</p>
+        <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-amber-200 mb-2">
+          x7ero
+        </h1>
+        <p className="text-xl text-amber-200 mb-6">Discover Your Next Favorite Game!</p>
       </header>
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto">
-        {/* Search Bar */}
-        <div className="mb-8">
+        {/* Enhanced Search Bar */}
+        <div className="mb-8 relative">
           <div className="relative max-w-2xl mx-auto">
+            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-purple-300">
+              <FaSearch className="h-5 w-5" />
+            </div>
             <input
               type="text"
-              placeholder="Search for awesome games..."
-              className="w-full py-3 px-6 bg-blue-900 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-md"
+              placeholder="Search games by name, category or description..."
+              className="w-full py-4 pl-12 pr-6 bg-blue-800/50 backdrop-blur-sm rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-lg border border-purple-500/30 text-white placeholder-purple-200"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              onFocus={() => searchTerm && setShowSearchResults(true)}
             />
-            <div className="absolute right-3 top-3 text-purple-400">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
+            {searchTerm && (
+              <button 
+                onClick={() => {
+                  setSearchTerm('');
+                  setShowSearchResults(false);
+                }}
+                className="absolute right-14 top-1/2 transform -translate-y-1/2 text-purple-300 hover:text-white"
+              >
+                ×
+              </button>
+            )}
           </div>
+
+          {/* Search Results Dropdown */}
+          {showSearchResults && (
+            <div className="absolute z-10 mt-2 w-full max-w-2xl mx-auto bg-blue-900/95 backdrop-blur-md rounded-xl shadow-2xl border border-purple-500/30 max-h-96 overflow-y-auto">
+              {filteredGames.length > 0 ? (
+                filteredGames.map((game) => (
+                  <div
+                    key={game.id}
+                    className="p-4 hover:bg-purple-800/50 cursor-pointer border-b border-purple-500/10 last:border-0 flex items-center"
+                    onClick={() => {
+                      navigate(`/game/${game.id}`);
+                      setShowSearchResults(false);
+                    }}
+                  >
+                    <img 
+                      src={game.image} 
+                      alt={game.name} 
+                      className="w-12 h-12 object-cover rounded-lg mr-4"
+                    />
+                    <div>
+                      <h3 className="font-semibold">{game.name}</h3>
+                      <p className="text-sm text-purple-200 truncate">{game.description}</p>
+                      <div className="flex items-center mt-1">
+                        <span className="text-xs bg-purple-600 px-2 py-1 rounded-full mr-2">
+                          {game.category}
+                        </span>
+                        <div className="flex text-yellow-400 text-xs">
+                          <TiStarFullOutline className="mr-1" />
+                          {game.rating}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div className="p-6 text-center text-purple-200">
+                  <FaGamepad className="mx-auto h-10 w-10 mb-2" />
+                  <p>No games found matching "{searchTerm}"</p>
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
-        {/* Featured Game */}
-        <section className="mb-12 bg-white rounded-2xl p-6 shadow-lg">
-          <h2 className="text-2xl font-bold mb-4 text-purple-600">Featured Game</h2>
-          <div className="flex flex-col md:flex-row gap-6">
-            <img 
-              src={featuredGame.image} 
-              alt={featuredGame.name} 
-              className="w-full md:w-1/2 h-64 object-cover rounded-xl"
-            />
-            <div className="flex flex-col justify-center">
-              <h3 className="text-3xl font-bold mb-2">{featuredGame.name}</h3>
-              <p className="text-gray-600 mb-4">{featuredGame.description}</p>
-              <div className="flex items-center mb-4">
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-4">
-                  {featuredGame.plays || '12M'} plays
-                </span>
-                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                  {featuredGame.category}
-                </span>
-              </div>
-              <button 
-                onClick={() => navigate(`/game/${featuredGame.id}`)}
-                className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full w-full md:w-auto"
-              >
-                Play Now!
-              </button>
-            </div>
-          </div>
-        </section>
-
-        {/* Most Popular Games */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-white">Most Popular Games</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {popularGames.map((game) => (
-              <div 
-                key={game.id} 
-                className="bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-shadow"
-                onClick={() => navigate(`/game/${game.id}`)}
-              >
-                <img 
-                  src={game.image} 
-                  alt={game.name} 
-                  className="w-full h-40 object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold mb-2 text-gray-800">{game.name}</h3>
-                  <div className="flex text-yellow-400">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i}>★</span>
-                    ))}
+        {/* Featured Game - Enhanced Design */}
+        {!showSearchResults && (
+          <>
+            <section className="mb-12 bg-gradient-to-r from-purple-800/50 to-blue-800/50 rounded-2xl p-6 shadow-xl border border-purple-500/30 backdrop-blur-sm">
+              <h2 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-amber-200">
+                Featured Game
+              </h2>
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="w-full md:w-1/2 relative group">
+                  <img 
+                    src={featuredGame.image} 
+                    alt={featuredGame.name} 
+                    className="w-full h-64 object-cover rounded-xl transform group-hover:scale-105 transition-transform duration-500 shadow-lg"
+                  />
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-medium">Click to play</span>
+                  </div> */}
+                </div>
+                <div className="w-full md:w-1/2">
+                  <h3 className="text-3xl font-bold mb-2">{featuredGame.name}</h3>
+                  <p className="text-purple-100 mb-4">{featuredGame.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="bg-purple-600/50 text-purple-100 px-3 py-1 rounded-full text-sm font-medium">
+                      {featuredGame.plays || '12M'} plays
+                    </span>
+                    <span className="bg-amber-500/20 text-amber-200 px-3 py-1 rounded-full text-sm font-medium">
+                      {featuredGame.category}
+                    </span>
+                    <span className="bg-pink-500/20 text-pink-200 px-3 py-1 rounded-full text-sm font-medium">
+                      ★ {featuredGame.rating}
+                    </span>
                   </div>
+                  <button 
+                    onClick={() => navigate(`/game/${featuredGame.id}`)}
+                    className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    Play Now!
+                  </button>
                 </div>
               </div>
-            ))}
-          </div>
-          <div 
-            className='flex items-center justify-center text-xl text-white font-bold cursor-pointer hover:text-pink-700 mt-6'
-            onClick={() => navigate('/all-games')}
-          >
-            <h1>More Games</h1>
-            <div className="ml-2"><TiArrowSortedDown /></div>
-          </div>
-        </section>
+            </section>
 
-        {/* Game Categories */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-white">Game Categories</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { name: 'Adventure', bg: 'bg-blue-500', icon: '🧭' },
-              { name: 'Puzzle', bg: 'bg-green-500', icon: '🧩' },
-              { name: 'Action', bg: 'bg-red-500', icon: '💥' },
-              { name: 'Cooking', bg: 'bg-yellow-500', icon: '🍳' },
-              { name: 'Sports', bg: 'bg-orange-500', icon: '⚽' },
-              { name: 'Racing', bg: 'bg-purple-500', icon: '🏎️' },
-              { name: 'Educational', bg: 'bg-indigo-500', icon: '📚' },
-              { name: 'Arcade', bg: 'bg-pink-500', icon: '🕹️' }
-            ].map((category) => (
-              <div 
-                key={category.name} 
-                className="relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group h-40"
-                onClick={() => navigate(`/category/${category.name.toLowerCase()}`)}
-              >
-                {/* Background with opacity */}
-                <div className={`absolute inset-0 ${category.bg} opacity-80 group-hover:opacity-90 transition-opacity duration-300`}></div>
-                
-                {/* Category content */}
-                <div className="relative z-10 h-full flex flex-col items-center justify-center p-4 text-white">
-                  {/* Icon with animation */}
-                  <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300">
-                    {category.icon}
+            {/* Most Popular Games - Enhanced Design */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-amber-200">
+                Most Popular Games
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {popularGames.map((game) => (
+                  <div 
+                    key={game.id} 
+                    className="bg-blue-900/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 border border-blue-700/30 group"
+                    onClick={() => navigate(`/game/${game.id}`)}
+                  >
+                    <div className="relative">
+                      <img 
+                        src={game.image} 
+                        alt={game.name} 
+                        className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                        <div className="flex text-yellow-400 mb-1">
+                          {[...Array(5)].map((_, i) => (
+                            <TiStarFullOutline key={i} className={i < game.rating ? "text-yellow-400" : "text-yellow-400/30"} />
+                          ))}
+                        </div>
+                        <span className="text-xs text-white">{game.plays || '1M'} plays</span>
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-semibold text-white truncate">{game.name}</h3>
+                      <span className="text-xs text-purple-200">{game.category}</span>
+                    </div>
                   </div>
-                  
-                  {/* Category name with animated underline */}
-                  <h3 className="font-bold text-lg relative">
-                    {category.name}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
-                  </h3>
-                  
-                  {/* Hidden text that slides up */}
-                  <p className="text-sm mt-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                    Explore {category.name} games
-                  </p>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
+              <div 
+                className='flex items-center justify-center text-xl text-amber-200 font-bold cursor-pointer hover:text-pink-300 mt-8 transition-colors duration-300'
+                onClick={() => navigate('/all-games')}
+              >
+                <h1>Browse All Games</h1>
+                <div className="ml-2 animate-bounce"><TiArrowSortedDown /></div>
+              </div>
+            </section>
+
+            {/* Game Categories - Enhanced Design */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-amber-200">
+                Game Categories
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  { name: 'Adventure', bg: 'from-blue-600 to-blue-800', icon: '🧭' },
+                  { name: 'Puzzle', bg: 'from-emerald-600 to-emerald-800', icon: '🧩' },
+                  { name: 'Action', bg: 'from-red-600 to-red-800', icon: '💥' },
+                  { name: 'Cooking', bg: 'from-amber-600 to-amber-800', icon: '🍳' },
+                  { name: 'Sports', bg: 'from-orange-600 to-orange-800', icon: '⚽' },
+                  { name: 'Racing', bg: 'from-purple-600 to-purple-800', icon: '🏎️' },
+                  { name: 'Educational', bg: 'from-indigo-600 to-indigo-800', icon: '📚' },
+                  { name: 'Arcade', bg: 'from-pink-600 to-pink-800', icon: '🕹️' }
+                ].map((category) => (
+                  <div 
+                    key={category.name} 
+                    className="relative rounded-xl overflow-hidden shadow-lg cursor-pointer h-40 group"
+                    // onClick={() => navigate(`/category/${category.name.toLowerCase()}`)}
+                  >
+                    <div className={`absolute inset-0 bg-gradient-to-br ${category.bg} opacity-90 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                    <div className="relative z-10 h-full flex flex-col items-center justify-center p-4 text-white">
+                      <div className="text-5xl mb-3 transform group-hover:scale-125 transition-transform duration-300">
+                        {category.icon}
+                      </div>
+                      <h3 className="font-bold text-xl relative">
+                        {category.name}
+                        <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-white group-hover:w-3/4 transition-all duration-500"></span>
+                      </h3>
+                      <p className="text-sm mt-3 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                        {Math.floor(Math.random() * 20) + 5} games
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
       </main>
 
       {/* Footer */}
-      <footer className="mt-12 text-center text-gray-500 text-sm">
+      <footer className="mt-12 text-center text-purple-300 text-sm">
         <p>© {new Date().getFullYear()} x7ero. All rights reserved.</p>
       </footer>
     </div>
