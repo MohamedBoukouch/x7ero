@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { games } from './gamesData';
 import { TiArrowSortedDown, TiStarFullOutline } from "react-icons/ti";
 import { FaGamepad, FaSearch } from "react-icons/fa";
-
+import { Link } from 'react-router-dom';
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredGames, setFilteredGames] = useState(games);
@@ -30,7 +30,7 @@ const App = () => {
   }, [searchTerm]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-900 via-indigo-900 to-blue-900 text-white p-4">
+    <div className="min-h-screen bg-gradient-to-b from-purple-900 via-indigo-900 to-blue-900 text-white pt-4">
       {/* Header */}
       <header className="flex flex-col items-center mb-8">
         <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-amber-200 mb-2">
@@ -239,9 +239,23 @@ const App = () => {
       </main>
 
       {/* Footer */}
-      <footer className="mt-12 text-center text-purple-300 text-sm">
-        <p>© {new Date().getFullYear()} x7ero. All rights reserved.</p>
+      <footer className="bg-gray-800/80 backdrop-blur-sm mt-12 border-t border-gray-700">
+        <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center">
+              <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">x7ero</span>
+              <span className="mx-4 text-gray-500">|</span>
+              <span className="text-gray-400">© {new Date().getFullYear()} All rights reserved</span>
+            </div>
+            <div className="mt-4 md:mt-0">
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-purple-400 transition-colors mr-6">
+                Privacy Policy
+              </Link>
+            </div>
+          </div>
+        </div>
       </footer>
+      
     </div>
   );
 };

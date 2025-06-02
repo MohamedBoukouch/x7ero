@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import Detail from './Detail';
 import AllGames from './AllGames';
+import PrivacyPolicy from './Privacy_policy';
 import './index.css';
 
 
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
   {
     path: '/all-games',
     element: <AllGames />,
+  },
+  {
+    path: '/privacy-policy',
+    element: <PrivacyPolicy />,
   },
   {
     path: '/',
