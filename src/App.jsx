@@ -4,6 +4,7 @@ import { games } from './gamesData';
 import { TiArrowSortedDown, TiStarFullOutline } from "react-icons/ti";
 import { FaGamepad, FaSearch } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredGames, setFilteredGames] = useState(games);
@@ -30,27 +31,27 @@ const App = () => {
   }, [searchTerm]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-900 via-indigo-900 to-blue-900 text-white pt-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white ">
       {/* Header */}
       <header className="flex flex-col items-center mb-8">
-        <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-amber-200 mb-2">
+        <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">
           x7ero
         </h1>
-        <p className="text-xl text-amber-200 mb-6">Discover Your Next Favorite Game!</p>
+        <p className="text-xl text-blue-300 mb-6">Discover Your Next Favorite Game!</p>
       </header>
 
       {/* Main Content */}
-      <main className="max-w-6xl mx-auto">
+      <main className="max-w-6xl mx-auto pt-4 px-4 sm:px-6">
         {/* Enhanced Search Bar */}
         <div className="mb-8 relative">
           <div className="relative max-w-2xl mx-auto">
-            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-purple-300">
+            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-300">
               <FaSearch className="h-5 w-5" />
             </div>
             <input
               type="text"
               placeholder="Search games by name, category or description..."
-              className="w-full py-4 pl-12 pr-6 bg-blue-800/50 backdrop-blur-sm rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-lg border border-purple-500/30 text-white placeholder-purple-200"
+              className="w-full py-4 pl-12 pr-6 bg-blue-800/50 backdrop-blur-sm rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-lg border border-blue-500/30 text-white placeholder-blue-200"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onFocus={() => searchTerm && setShowSearchResults(true)}
@@ -61,7 +62,7 @@ const App = () => {
                   setSearchTerm('');
                   setShowSearchResults(false);
                 }}
-                className="absolute right-14 top-1/2 transform -translate-y-1/2 text-purple-300 hover:text-white"
+                className="absolute right-14 top-1/2 transform -translate-y-1/2 text-blue-300 hover:text-white"
               >
                 ×
               </button>
@@ -70,12 +71,12 @@ const App = () => {
 
           {/* Search Results Dropdown */}
           {showSearchResults && (
-            <div className="absolute z-10 mt-2 w-full max-w-2xl mx-auto bg-blue-900/95 backdrop-blur-md rounded-xl shadow-2xl border border-purple-500/30 max-h-96 overflow-y-auto">
+            <div className="absolute z-10 mt-2 w-full max-w-2xl mx-auto bg-blue-900/95 backdrop-blur-md rounded-xl shadow-2xl border border-blue-500/30 max-h-96 overflow-y-auto">
               {filteredGames.length > 0 ? (
                 filteredGames.map((game) => (
                   <div
                     key={game.slug}
-                    className="p-4 hover:bg-purple-800/50 cursor-pointer border-b border-purple-500/10 last:border-0 flex items-center"
+                    className="p-4 hover:bg-blue-800/50 cursor-pointer border-b border-blue-500/10 last:border-0 flex items-center"
                     onClick={() => {
                       navigate(`/game/${game.slug}`);
                       setShowSearchResults(false);
@@ -88,9 +89,9 @@ const App = () => {
                     />
                     <div>
                       <h3 className="font-semibold">{game.name}</h3>
-                      <p className="text-sm text-purple-200 truncate">{game.description}</p>
+                      <p className="text-sm text-blue-200 truncate">{game.description}</p>
                       <div className="flex items-center mt-1">
-                        <span className="text-xs bg-purple-600 px-2 py-1 rounded-full mr-2">
+                        <span className="text-xs bg-blue-600 px-2 py-1 rounded-full mr-2">
                           {game.category}
                         </span>
                         <div className="flex text-yellow-400 text-xs">
@@ -102,7 +103,7 @@ const App = () => {
                   </div>
                 ))
               ) : (
-                <div className="p-6 text-center text-purple-200">
+                <div className="p-6 text-center text-blue-200">
                   <FaGamepad className="mx-auto h-10 w-10 mb-2" />
                   <p>No games found matching "{searchTerm}"</p>
                 </div>
@@ -114,8 +115,8 @@ const App = () => {
         {/* Featured Game - Enhanced Design */}
         {!showSearchResults && (
           <>
-            <section className="mb-12 bg-gradient-to-r from-purple-800/50 to-blue-800/50 rounded-2xl p-6 shadow-xl border border-purple-500/30 backdrop-blur-sm">
-              <h2 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-amber-200">
+            <section className="mb-12 bg-gradient-to-r from-blue-800/50 to-violet-800/50 rounded-2xl p-6 shadow-xl border border-blue-500/30 backdrop-blur-sm mx-4 sm:mx-0">
+              <h2 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
                 Featured Game
               </h2>
               <div className="flex flex-col md:flex-row gap-6">
@@ -125,27 +126,24 @@ const App = () => {
                     alt={featuredGame.name} 
                     className="w-full h-64 object-cover rounded-xl transform group-hover:scale-105 transition-transform duration-500 shadow-lg"
                   />
-                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <span className="text-white font-medium">Click to play</span>
-                  </div> */}
                 </div>
                 <div className="w-full md:w-1/2">
                   <h3 className="text-3xl font-bold mb-2">{featuredGame.name}</h3>
-                  <p className="text-purple-100 mb-4">{featuredGame.description}</p>
+                  <p className="text-blue-100 mb-4">{featuredGame.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-purple-600/50 text-purple-100 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-blue-600/50 text-blue-100 px-3 py-1 rounded-full text-sm font-medium">
                       {featuredGame.plays || '12M'} plays
                     </span>
-                    <span className="bg-amber-500/20 text-amber-200 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-cyan-500/20 text-cyan-200 px-3 py-1 rounded-full text-sm font-medium">
                       {featuredGame.category}
                     </span>
-                    <span className="bg-pink-500/20 text-pink-200 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-yellow-500/20 text-yellow-200 px-3 py-1 rounded-full text-sm font-medium">
                       ★ {featuredGame.rating}
                     </span>
                   </div>
                   <button 
                     onClick={() => navigate(`/game/${featuredGame.slug}`)}
-                    className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     Play Now!
                   </button>
@@ -154,11 +152,11 @@ const App = () => {
             </section>
 
             {/* Most Popular Games - Enhanced Design */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-amber-200">
+            <section className="mb-12 mx-4 sm:mx-0">
+              <h2 className="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
                 Most Popular Games
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                 {popularGames.map((game) => (
                   <div 
                     key={game.id} 
@@ -182,13 +180,13 @@ const App = () => {
                     </div>
                     <div className="p-4">
                       <h3 className="font-semibold text-white truncate">{game.name}</h3>
-                      <span className="text-xs text-purple-200">{game.category}</span>
+                      <span className="text-xs text-blue-200">{game.category}</span>
                     </div>
                   </div>
                 ))}
               </div>
               <div 
-                className='flex items-center justify-center text-xl text-amber-200 font-bold cursor-pointer hover:text-pink-300 mt-8 transition-colors duration-300'
+                className='flex items-center justify-center text-xl text-blue-300 font-bold cursor-pointer hover:text-cyan-300 mt-8 transition-colors duration-300'
                 onClick={() => navigate('/all-games')}
               >
                 <h1>Browse All Games</h1>
@@ -197,11 +195,11 @@ const App = () => {
             </section>
 
             {/* Game Categories - Enhanced Design */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-amber-200">
+            <section className="mb-12 mx-4 sm:mx-0">
+              <h2 className="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
                 Game Categories
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                 {[
                   { name: 'Adventure', bg: 'from-blue-600 to-blue-800', icon: '🧭' },
                   { name: 'Puzzle', bg: 'from-emerald-600 to-emerald-800', icon: '🧩' },
@@ -215,7 +213,6 @@ const App = () => {
                   <div 
                     key={category.name} 
                     className="relative rounded-xl overflow-hidden shadow-lg cursor-pointer h-40 group"
-                    // onClick={() => navigate(`/category/${category.name.toLowerCase()}`)}
                   >
                     <div className={`absolute inset-0 bg-gradient-to-br ${category.bg} opacity-90 group-hover:opacity-100 transition-opacity duration-300`}></div>
                     <div className="relative z-10 h-full flex flex-col items-center justify-center p-4 text-white">
@@ -243,19 +240,18 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center">
-              <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">x7ero</span>
+              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">x7ero</span>
               <span className="mx-4 text-gray-500">|</span>
               <span className="text-gray-400">© {new Date().getFullYear()} All rights reserved</span>
             </div>
             <div className="mt-4 md:mt-0">
-              <Link to="/privacy-policy" className="text-gray-400 hover:text-purple-400 transition-colors mr-6">
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-blue-400 transition-colors mr-6">
                 Privacy Policy
               </Link>
             </div>
           </div>
         </div>
       </footer>
-      
     </div>
   );
 };
