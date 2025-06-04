@@ -2,11 +2,12 @@ import React, { useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { games } from './gamesData';
 import { FaExpand, FaCompress, FaArrowLeft, FaGamepad, FaKeyboard, FaMouse } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 const Detail = () => {
-  const { id } = useParams();
+  const { slug } = useParams(); // Changed from id to slug
   const navigate = useNavigate();
-  const game = games.find(game => game.id === parseInt(id));
+  const game = games.find(game => game.slug === slug); // Find by slug instead of id
   const iframeRef = useRef(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
@@ -43,15 +44,45 @@ const Detail = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white p-4">
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>{game.name} - Play Online | x7ero</title>
+        <meta name="description" content={game.description} />
+        <link rel="canonical" href={`https://x7ero.com/games/${game.slug}`} />
+        {/* OpenGraph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://x7ero.com/games/${game.slug}`} />
+        <meta property="og:title" content={`${game.name} - Play Online | x7ero`} />
+        <meta property="og:description" content={game.description} />
+        <meta property="og:image" content={game.image} />
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={`https://x7ero.com/games/${game.slug}`} />
+        <meta property="twitter:title" content={`${game.name} - Play Online | x7ero`} />
+        <meta property="twitter:description" content={game.description} />
+        <meta property="twitter:image" content={game.image} />
+      </Helmet>
+
       <div className="max-w-6xl mx-auto">
+        {/* Breadcrumbs Navigation */}
+        <nav className="text-sm mb-4 text-gray-400">
+          <ol className="flex space-x-2">
+            <li><button onClick={() => navigate('/')} className="hover:text-purple-400">Home</button></li>
+            <li>/</li>
+            <li><button onClick={() => navigate('/all-games')} className="hover:text-purple-400">Games</button></li>
+            <li>/</li>
+            <li className="text-purple-300">{game.name}</li>
+          </ol>
+        </nav>
+
         {/* Game Header */}
         <div className="flex justify-between items-center mb-6">
           <button 
-            onClick={() => navigate('/')}
+            onClick={() => navigate(-1)}
             className="flex items-center text-purple-400 hover:text-purple-300 transition-colors group"
           >
             <FaArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform" />
-            Back to Games
+            Back
           </button>
           <div className="flex items-center space-x-2 text-sm">
             <span className="bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full">
@@ -69,7 +100,7 @@ const Detail = () => {
             <div className="w-full md:w-1/3 relative group">
               <img 
                 src={game.image} 
-                alt={game.name} 
+                alt={`${game.name} thumbnail`} 
                 className="w-full h-48 md:h-64 object-cover rounded-lg border border-gray-700 group-hover:opacity-90 transition-opacity"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
@@ -135,7 +166,7 @@ const Detail = () => {
             frameBorder="0"
             className="rounded-lg shadow-lg"
             allowFullScreen
-            title={game.name}
+            title={`Play ${game.name} on x7ero`}
           />
         </div>
 

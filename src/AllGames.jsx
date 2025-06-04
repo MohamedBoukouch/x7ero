@@ -64,7 +64,7 @@ const AllGames = () => {
                 <div 
                   key={game.id} 
                   className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 border border-gray-700 group"
-                  onClick={() => navigate(`/game/${game.id}`)}
+                  onClick={() => navigate(`/game/${game.slug}`)}
                 >
                   <div className="relative">
                     <img 

@@ -5,6 +5,10 @@ import App from './App';
 import Detail from './Detail';
 import AllGames from './AllGames';
 import PrivacyPolicy from './Privacy_policy';
+import NotFound from './NotFound';
+import { Analytics } from '@vercel/analytics/react';
+
+
 import './index.css';
 
 
@@ -22,13 +26,18 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: '/game/:id',
+    path: '/game/:slug',
     element: <Detail />,
   },
+  {
+    path: '*', // Catch-all for undefined routes
+    element: <NotFound />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <Analytics />
   </React.StrictMode>
 );

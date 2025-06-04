@@ -74,10 +74,10 @@ const App = () => {
               {filteredGames.length > 0 ? (
                 filteredGames.map((game) => (
                   <div
-                    key={game.id}
+                    key={game.slug}
                     className="p-4 hover:bg-purple-800/50 cursor-pointer border-b border-purple-500/10 last:border-0 flex items-center"
                     onClick={() => {
-                      navigate(`/game/${game.id}`);
+                      navigate(`/game/${game.slug}`);
                       setShowSearchResults(false);
                     }}
                   >
@@ -144,7 +144,7 @@ const App = () => {
                     </span>
                   </div>
                   <button 
-                    onClick={() => navigate(`/game/${featuredGame.id}`)}
+                    onClick={() => navigate(`/game/${featuredGame.slug}`)}
                     className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     Play Now!
@@ -163,7 +163,7 @@ const App = () => {
                   <div 
                     key={game.id} 
                     className="bg-blue-900/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 border border-blue-700/30 group"
-                    onClick={() => navigate(`/game/${game.id}`)}
+                    onClick={() => navigate(`/game/${game.slug}`)}
                   >
                     <div className="relative">
                       <img 
