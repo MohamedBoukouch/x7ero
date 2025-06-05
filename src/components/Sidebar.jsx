@@ -122,12 +122,12 @@ const Sidebar = ({ isOpen, onClose }) => {
             <h3 className="text-lg font-semibold text-blue-400 md:hidden md:group-hover:block">
               Accueil
             </h3>
-            <button 
+            {/* <button 
               onClick={() => handleViewAll('recommande')}
               className="text-xs text-purple-400 hover:text-purple-300 flex items-center md:hidden md:group-hover:flex"
             >
               Voir tous <FaArrowRight className="ml-1" />
-            </button>
+            </button> */}
           </div>
           <ul className="space-y-1">
             <SidebarItem 
@@ -169,12 +169,12 @@ const Sidebar = ({ isOpen, onClose }) => {
             <h3 className="text-lg font-semibold text-blue-400 md:hidden md:group-hover:block">
               CATEGORIES
             </h3>
-            <button 
+            {/* <button 
               onClick={() => navigate('/all-games')}
               className="text-xs text-purple-400 hover:text-purple-300 flex items-center md:hidden md:group-hover:flex"
             >
               Voir tous <FaArrowRight className="ml-1" />
-            </button>
+            </button> */}
           </div>
           <ul className="space-y-1">
             <SidebarItem 
