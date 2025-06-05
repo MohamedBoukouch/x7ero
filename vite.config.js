@@ -7,6 +7,9 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    react({
+      include: '**/*.js', // Add this line to process JSX in .js files
+    })
   ],
 })
 

@@ -2,19 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
-import Detail from './Detail';
-import AllGames from './AllGames';
-import PrivacyPolicy from './Privacy_policy';
-import NotFound from './NotFound';
+import Detail from './pages/Detail';
+import AllGames from './pages/AllGames';
+import PrivacyPolicy from './components/Privacy_policy';
+import NotFound from './pages/NotFound';
 import { Analytics } from '@vercel/analytics/react';
-
-
 import './index.css';
 
 
 const router = createBrowserRouter([
   {
-    path: '/all-games',
+    path: '/all-games/:type?', // The ? makes type parameter optional
     element: <AllGames />,
   },
   {

@@ -1,13 +1,13 @@
 import React, { useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { games } from './gamesData';
+import { games } from '../gamesData';
 import { FaExpand, FaCompress, FaArrowLeft, FaGamepad, FaKeyboard, FaMouse } from 'react-icons/fa';
 import { Helmet } from 'react-helmet';
 
 const Detail = () => {
-  const { slug } = useParams(); // Changed from id to slug
+  const { slug } = useParams();
   const navigate = useNavigate();
-  const game = games.find(game => game.slug === slug); // Find by slug instead of id
+  const game = games.find(game => game.slug === slug);
   const iframeRef = useRef(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
@@ -42,6 +42,31 @@ const Detail = () => {
     );
   }
 
+  // Get the display name for the type
+  const getTypeDisplayName = () => {
+    if (!game.type) return "No Type Specified";
+    switch(game.type.toLowerCase()) {
+      case 'tendance': return 'Tendance';
+      case 'nouveaux': return 'Nouveaux';
+      case 'updated': return 'Mis à jour';
+      case 'originals': return 'Originals';
+      case 'multiplayer': return 'Multijoueur';
+      case '2players': return '2 Joueurs';
+      case 'action': return 'Action';
+      case 'adventure': return 'Aventure';
+      case 'sport': return 'Sport';
+      case 'beauty': return 'Beauté';
+      case 'shooting': return 'Tir';
+      case 'racing': return 'Course';
+      case 'puzzle': return 'Puzzle';
+      case 'fighting': return 'Combat';
+      case 'defense': return 'Défense';
+      case 'football': return 'Football';
+      case 'flying': return 'Vol';
+      default: return game.type;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white p-4">
       {/* SEO Meta Tags */}
@@ -69,8 +94,19 @@ const Detail = () => {
           <ol className="flex space-x-2">
             <li><button onClick={() => navigate('/')} className="hover:text-purple-400">Home</button></li>
             <li>/</li>
-            <li><button onClick={() => navigate('/all-games')} className="hover:text-purple-400">Games</button></li>
-            <li>/</li>
+            {game.type && (
+              <>
+                <li>
+                  <button 
+                    onClick={() => navigate(`/type/${game.type.toLowerCase()}`)} 
+                    className="hover:text-purple-400"
+                  >
+                    {getTypeDisplayName()}
+                  </button>
+                </li>
+                <li>/</li>
+              </>
+            )}
             <li className="text-purple-300">{game.name}</li>
           </ol>
         </nav>
@@ -112,9 +148,16 @@ const Detail = () => {
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
                   {game.name}
                 </h1>
-                <span className="bg-gray-700 text-amber-300 px-3 py-1 rounded-full text-sm font-medium">
-                  {game.category}
-                </span>
+                <div className="flex flex-col items-end">
+                  <span className="bg-gray-700 text-amber-300 px-3 py-1 rounded-full text-sm font-medium mb-1">
+                    {game.category}
+                  </span>
+                  {game.type && (
+                    <span className="bg-gray-700 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                      {getTypeDisplayName()}
+                    </span>
+                  )}
+                </div>
               </div>
               <p className="text-gray-300 mb-6">{game.description}</p>
               <div className="flex flex-wrap gap-3">

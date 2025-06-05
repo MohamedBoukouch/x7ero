@@ -1,14 +1,19 @@
-import React, { useState } from 'react'; // Added useState import here
-import { useNavigate } from 'react-router-dom';
-import { games } from './gamesData';
+import React, { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { games } from '../gamesData';
 import { FaArrowLeft, FaStar, FaGamepad, FaSearch } from 'react-icons/fa';
 import { IoGameController } from 'react-icons/io5';
 
 const AllGames = () => {
   const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState(''); // Now properly imported
+  const { type } = useParams(); // Get the type from URL params
+  const [searchTerm, setSearchTerm] = useState('');
   
-  const filteredGames = games.filter(game =>
+  // Filter games by type if type parameter exists, otherwise show all games
+  const filteredByType = type ? games.filter(game => game.type === type) : games;
+  
+  // Then apply search filter
+  const filteredGames = filteredByType.filter(game =>
     game.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     game.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -50,7 +55,7 @@ const AllGames = () => {
         
         <p className="text-xl text-purple-200 mt-6 text-center">
           <IoGameController className="inline mr-2" />
-          All Games Collection
+          {type ? `${type.charAt(0).toUpperCase() + type.slice(1)} Games` : 'All Games Collection'}
         </p>
       </header>
 
