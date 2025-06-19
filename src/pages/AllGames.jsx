@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { games } from '../gamesData';
+import { games } from '../data/gamesData';
 import { FaArrowLeft, FaStar, FaGamepad, FaSearch } from 'react-icons/fa';
 import { IoGameController } from 'react-icons/io5';
 

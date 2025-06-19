@@ -5,6 +5,8 @@ import App from './App';
 import Detail from './pages/Detail';
 import AllGames from './pages/AllGames';
 import PrivacyPolicy from './components/Privacy_policy';
+import Blogs from './pages/Blogs';
+import Article from './components/Article';
 import NotFound from './pages/NotFound';
 import { Analytics } from '@vercel/analytics/react';
 import './index.css';
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
   {
     path: '/privacy-policy',
     element: <PrivacyPolicy />,
+  },
+  {
+    path: 'blogs',
+    element: <Blogs />,
+  },
+  {
+    path: 'blogs/article/:id',
+    element: <Article />,
   },
   {
     path: '/',

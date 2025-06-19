@@ -5,7 +5,7 @@ import Sidebar from './components/Sidebar';
 import WelcomeBanner from './pages/WelcomeBanner';
 import GameSection from './components/GameSection';
 import { FaSearch } from 'react-icons/fa';
-import { games } from './gamesData';
+import { games } from './data/gamesData';
 
 const App = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);

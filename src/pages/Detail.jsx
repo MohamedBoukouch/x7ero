@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { games } from '../gamesData';
+import { games } from '../data/gamesData';
 import { FaExpand, FaCompress, FaArrowLeft, FaGamepad, FaKeyboard, FaMouse } from 'react-icons/fa';
 import { Helmet } from 'react-helmet';
 

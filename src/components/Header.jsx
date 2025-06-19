@@ -1,7 +1,7 @@
 import { FaSearch, FaBars, FaUserCog } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { games } from '../gamesData';
+import { games } from '../data/gamesData';
 
 const Header = ({ onMenuClick }) => {
   const navigate = useNavigate();

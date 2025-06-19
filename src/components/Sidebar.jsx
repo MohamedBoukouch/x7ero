@@ -6,7 +6,7 @@ import { GiBoxingGlove, GiSwordman } from 'react-icons/gi';
 import { BiFootball } from 'react-icons/bi';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { games } from '../gamesData';
+import { games } from '../data/gamesData';
 
 const Sidebar = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
