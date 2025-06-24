@@ -28,6 +28,9 @@ import UnoPartyCard from '../assets/games/UnoPartyCard.jpg';
 import ShellSwapPro from '../assets/games/ShellSwapPro.jpg';
 import CollectAndBreak from '../assets/games/CollectAndBreak.jpg';
 import IdleBathroomEmpireTycoon from '../assets/games/IdleBathroomEmpireTycoon.jpg';
+import italian_animals_with_voice_acting from '../assets/games/italian_animals_with_voice_acting.jpg';
+import treat_tumble from '../assets/games/treat_tumble.jpg';
+import trump_wheelie_challenge from '../assets/games/trump_wheelie_challenge.jpg';
 
 export const games = [
   {
@@ -327,6 +330,36 @@ export const games = [
     slug: "idle_bathroom_empire_tycoon",
     url: 'https://html5.gamemonetize.co/iwebmom4m4nlng0sf9mi7owi55p39cl9/',
     description: 'Ready to become the ultimate bathroom tycoon? In this exciting mix of simulation, management, and idle tycoon gameplay, you’ll start with a small restroom. Grow it into a luxurious five-star hygiene haven! Upgrade facilities, optimize services, and expand your empire to make your bathroom the most popular spot in town. Manage your front desk with care, and faster cashiering will give you more cash flow.',
+    category: 'Action',
+    type: 'Originals'
+  },
+  {
+    id: 31,
+    name: 'Italian animals with voice acting',
+    image: italian_animals_with_voice_acting    ,
+    slug: "italian_animals_with_voice_acting",
+    url: 'https://html5.gamemonetize.co/fnfaupatt3c7nitj7melsrsok1tyab2c/',
+    description: 'All Italian animals and their original sounds are here! In the game, you can open all the characters from the meme about Italian animals and listen to their voice acting with an interesting fusion mechanic. Ballerina Cappuccino and Bombardino Crocodilo are already waiting for you!',
+    category: 'Puzzle',
+    type: 'Originals'
+  },
+  {
+    id: 32,
+    name: 'Treat Tumble',
+    image: treat_tumble    ,
+    slug: "treat_tumble",
+    url: 'https://html5.gamemonetize.co/h0zdzch2cdm9kvw6lxxjo62ojqb4i303/',
+    description: 'Match. Munch. Mayhem! Dive into a deliciously addictive world of candy-coated chaos in Treat Tumble — the ultimate match-3 puzzle adventure! Swap and match colorful treats like gummy bears, chocolate bites, and jelly cubes to clear levels and unlock sweet surprises. With 100+ vibrant levels, explosive power-ups, and daily rewards, Treat Tumble is your perfect sugar rush — no calories included! Game Features: Match-3 Magic – Match 3 or more treats to blast through obstacles and earn tasty combos! Whimsical Worlds – Explore candy kingdoms, soda swamps, and cookie cliffs.',
+    category: 'Puzzle',
+    type: 'Originals'
+  },
+  {
+    id: 33,
+    name: 'Trump Wheelie Challenge',
+    image: trump_wheelie_challenge    ,
+    slug: "trump_wheelie_challenge",
+    url: 'https://html5.gamemonetize.co/9pc3ac8adszy2k1d1gtqhmy1xci9yh6d/',
+    description: 'Trump Wheelie Challenge is a super fun 2D game where you drive a jeep on one wheel! Balance carefully, collect money, jump over bouncing balls, and try to reach the finish line without flipping over. Complete each level by mastering the wheelie and surviving the chaos! Play the Trump Wheelie Challenge game now.',
     category: 'Action',
     type: 'Originals'
   },
