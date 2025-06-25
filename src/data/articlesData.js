@@ -4,6 +4,9 @@ import gameHistoir from '../assets/blogs/gameHistoir.jpg';
 import Virtuelle from '../assets/blogs/Virtuelle.jpg';
 import statistiques from '../assets/blogs/statistiques.jpg';
 import nft from '../assets/blogs/nft.jpg';
+import browsergames from '../assets/blogs/browsergames.png';
+import cloudgaming from '../assets/blogs/cloudgaming.png';
+
 
 export const articles = [
   {
@@ -185,5 +188,103 @@ export const articles = [
         text: "Volatilité des tokens, greenwashing, arnaques : de nombreux jeux NFT manquent de valeur réelle. Les régulations à venir détermineront leur avenir."
       }
     ]
+  },
+  {
+    id: 6,
+    title: "Jeux de Navigateur 2025: Top des Expériences Gratuites en Ligne",
+    category: "Guides",
+    date: "25 juin 2025",
+    readTime: "8 min",
+    excerpt: "Découvrez les meilleurs jeux de navigateur gratuits pour jouer instantanément, sans téléchargement. Idéal pour tous les appareils, même les plus légers.",
+    image: browsergames,
+    keywords: ["jeux de navigateur", "browser games", "jeux en ligne gratuits", "jouer sans téléchargement", "jeux HTML5", "x7ero.com"],
+    content: [
+      {
+        type: "heading",
+        text: "1. Qu’est-ce qu’un jeu de navigateur ?"
+      },
+      {
+        type: "paragraph",
+        text: "Les jeux de navigateur (browser games) sont accessibles directement via Internet sans installation. Jouables sur PC, tablette ou mobile, ils utilisent les technologies HTML5, WebGL ou Unity Web Player."
+      },
+      {
+        type: "heading",
+        text: "2. Pourquoi choisir un browser game ?"
+      },
+      {
+        type: "paragraph",
+        text: "Rapides à lancer, sans frais ni matériel puissant requis, les browser games sont parfaits pour les pauses détente. Ils proposent aujourd’hui des graphismes soignés et des mécaniques de jeu avancées."
+      },
+      {
+        type: "heading",
+        text: "3. Top 5 des jeux de navigateur en 2025"
+      },
+      {
+        type: "paragraph",
+        text: "- **Forge of Empires** : stratégie en temps réel et gestion d’empire.\n- **Slither.io** : jeu d’arcade multijoueur rapide et addictif.\n- **Hero Wars** : RPG fantasy populaire et visuellement riche.\n- **Krunker.io** : FPS compétitif, fluide même sur de vieilles machines.\n- **x7ero.com** : nouvelle plateforme marocaine avec jeux sélectionnés pour performance et fun instantané."
+      },
+      {
+        type: "heading",
+        text: "4. SEO & Performance : le pari de x7ero.com"
+      },
+      {
+        type: "paragraph",
+        text: "La plateforme **x7ero.com** propose des jeux sans pub intrusive, optimisés pour les moteurs de recherche (SEO), la vitesse de chargement et la compatibilité mobile. Une référence en Afrique francophone."
+      },
+      {
+        type: "heading",
+        text: "5. Vers un avenir cloud et multi-plateformes"
+      },
+      {
+        type: "paragraph",
+        text: "Les jeux de navigateur évoluent avec l’IA et le cloud computing. Grâce aux technologies web modernes, ils deviennent une vraie alternative aux applications lourdes ou jeux console."
+      }
+    ]
+  },
+  {
+    id: 7,
+    title: "Cloud Gaming en 2025: Jouer Sans Limites",
+    category: "Technologie",
+    date: "10 juin 2025",
+    readTime: "7 min",
+    excerpt: "Le cloud gaming transforme l'industrie vidéoludique. Découvrez comment il permet de jouer n'importe où, sans console ni PC puissant.",
+    image: cloudgaming,
+    keywords: ["cloud gaming", "gaming sans console", "jeux en streaming", "technologie cloud", "Google Stadia", "Xbox Cloud"],
+    content: [
+      {
+        type: "heading",
+        text: "1. Le concept du cloud gaming"
+      },
+      {
+        type: "paragraph",
+        text: "Le cloud gaming permet de jouer à des jeux vidéo via Internet sans les télécharger. Tout est exécuté sur des serveurs distants, et le joueur interagit en streaming depuis son appareil."
+      },
+      {
+        type: "heading",
+        text: "2. Avantages majeurs"
+      },
+      {
+        type: "paragraph",
+        text: "Accessibilité sur smartphones, tablettes, Smart TV. Plus besoin d’avoir un PC gamer ou une console. Mise à jour automatique des jeux et compatibilité multiplateforme renforcent son attrait."
+      },
+      {
+        type: "heading",
+        text: "3. Plateformes leaders en 2025"
+      },
+      {
+        type: "paragraph",
+        text: "- **Xbox Cloud Gaming** : solide catalogue Game Pass.\n- **GeForce NOW** : puissance Nvidia et compatibilité étendue.\n- **Amazon Luna** : croissance rapide en Amérique.\n- **Boosteroid** : populaire en Europe.\n- **Shadow** : pour les gamers exigeants."
+      },
+      {
+        type: "heading",
+        text: "4. Les défis du cloud gaming"
+      },
+      {
+        type: "paragraph",
+        text: "Latence, connexion Internet instable et dépendance au cloud restent des obstacles. Mais avec la 5G et la fibre optique, ces limites reculent chaque année."
+      }
+    ]
   }
+  
+
 ];
