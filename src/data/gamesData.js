@@ -31,6 +31,16 @@ import IdleBathroomEmpireTycoon from '../assets/games/IdleBathroomEmpireTycoon.j
 import italian_animals_with_voice_acting from '../assets/games/italian_animals_with_voice_acting.jpg';
 import treat_tumble from '../assets/games/treat_tumble.jpg';
 import trump_wheelie_challenge from '../assets/games/trump_wheelie_challenge.jpg';
+import Blob_Dash_Endless_Runner from '../assets/games/Blob_Dash_Endless_Runner.jpg';
+import stickman_rescue_draw_2_save from '../assets/games/stickman_rescue_draw_2_save.jpg';
+import Tap_to_Fish from '../assets/games/Tap_to_Fish.jpg';
+import Bank_Boom_Tung_Tung_Sahur from '../assets/games/Bank_Boom_Tung_Tung_Sahur.jpg';
+import Bloxorz from '../assets/games/Bloxorz.jpg';
+import Super_Motocross from '../assets/games/Super_Motocross.jpg';
+import Hide_And_Seek_Friends  from '../assets/games/Hide_And_Seek_Friends.jpg';
+import Word_Search_Universe  from '../assets/games/Word_Search_Universe.jpg';
+import Birdy_Trip from '../assets/games/Birdy_Trip.jpg';
+import Super_Ball_Juggling_Remix  from '../assets/games/Super_Ball_Juggling_Remix.jpg';
 
 export const games = [
   {
@@ -356,11 +366,112 @@ export const games = [
   {
     id: 33,
     name: 'Trump Wheelie Challenge',
-    image: trump_wheelie_challenge    ,
+    image: trump_wheelie_challenge,
     slug: "trump_wheelie_challenge",
     url: 'https://html5.gamemonetize.co/9pc3ac8adszy2k1d1gtqhmy1xci9yh6d/',
     description: 'Trump Wheelie Challenge is a super fun 2D game where you drive a jeep on one wheel! Balance carefully, collect money, jump over bouncing balls, and try to reach the finish line without flipping over. Complete each level by mastering the wheelie and surviving the chaos! Play the Trump Wheelie Challenge game now.',
     category: 'Action',
     type: 'Originals'
   },
+  {
+    id: 34,
+    name: 'Blob Dash Endless Runner',
+    image: Blob_Dash_Endless_Runner,
+    slug: "blob_dash_endless_runner",
+    url: 'https://html5.gamemonetize.co/hhxuvwcwnaledkbjmz8gsdehf0aits6i/',
+    description: 'Blob Dash - Endless Runner is an exciting adventure game that takes you on a fast-paced journey through a colorful world filled with challenges and obstacles. As the player, you must control a cute blob and guide it through levels of increasing difficulty. In this game, youll have to run, jump, dodge, and slide your way past hazards such as spikes, gaps, and other obstacles.',
+    category: 'Action',
+    type: 'Originals'
+  },
+  {
+    id: 35,
+    name: 'Stickman Rescue Draw 2 Save',
+    image: stickman_rescue_draw_2_save,
+    slug: "stickman_rescue_draw_2_save",
+    url: 'https://html5.gamemonetize.co/fxzsxwyiw3kdj5hf1dnsx6ogy52od6of/',
+    description: 'Your brain is the only shield for the stickman! Enjoy a super casual puzzler in the Stickman Rescue - Draw 2 Save. Use your finger to draw lines and save the stickman from danger! In each level, the stickman is in trouble, such as falling rocks, flying arrows, deep pits, etc. It’s up to you to draw a safe shield, a bridge, or a clever device to keep him safe and complete your rescue mission!',
+    category: 'Action',
+    type: 'Originals'
+  },
+  {
+    id: 36,
+    name: 'Tap to Fish',
+    image: Tap_to_Fish    ,
+    slug: "tap_to_fish",
+    url: 'https://html5.gamemonetize.co/7ztwli9nry48v7id6vd7ajsjzvlhfkts/',
+    description: 'Cast your line, reel in the rewards, and grow your fishing empire! In Tap to Fish, you begin with simple gear and work your way up by catching and selling fish for gold. Every catch earns you coins to upgrade your fishing rod boosting its capacity and reaching deeper waters. With its smooth gameplay and vibrant visuals, this hypercasual adventure is easy to pick up and hard to put down.',
+    category: 'Action',
+    type: 'Originals'
+  },
+  {
+    id: 37,
+    name: 'Bank Boom Tung Tung Sahur',
+    image: Bank_Boom_Tung_Tung_Sahur,
+    slug: "bank_boom_tung_tung_sahur",
+    url: 'https://html5.gamemonetize.co/7ztwli9nry48v7id6vd7ajsjzvlhfkts/',
+    description: 'Are you ready for a bank heist? You have 20 seconds to crack the safe! Compete with your friend — the first to open the vault wins. Smash the safe open and beat your friend to it. Hit your friend with a club to slow them down and win the race. The club is a powerful weapon. The fate of the game is in your hands. Strike fast and unlock the bank vault!',
+    category: 'Action',
+    type: 'Originals'
+  },
+  {
+    id: 38,
+    name: 'Bloxorz',
+    image: Bloxorz,
+    slug: "bloxorz",
+    url: 'https://html5.gamemonetize.co/nhyyth7h1gztti5jba25n5o6v3002j5q/',
+    description: 'Bloxorz is a block sliding puzzle game. You will need roll the block around the board until it falls into the square hole in 33 challenging levels.',
+    category: 'Action',
+    type: 'Originals'
+  },
+  {
+    id: 39,
+    name: 'Super Motocross',
+    image: Super_Motocross,
+    slug: "super_motocross",
+    url: 'https://html5.gamemonetize.co/d8vjyjtwgj1c7opsa1e99ifmvnfvgvn8/',
+    description: 'Ride your dirt bike through challenging levels full of ramps, jumps, and obstacles. Balance, accelerate, and reach the finish line without crashing! A fun and fast-paced HTML5 motocross game for all ages.',
+    category: 'Action',
+    type: 'Originals'
+  },
+  {
+    id: 40,
+    name: 'Hide And Seek Friends!',
+    image: Hide_And_Seek_Friends,
+    slug: "hide_and_seek_friends",
+    url: 'https://html5.gamemonetize.co/c55i7d1tly2sovcobi9j3i13cpz0iekw/',
+    description: 'The good old classic hide & seek. Play either as a seeker or as a hider and build your shelters from cars or office desks, hide in the water, in the hay pile, in the cornfield, in the boss office and most importantly, push others in the seekers vision field. Try to be kind though. Hide N Seek! : Dive into the ultimate online Hide & Seek experience! Battle in real-time multiplayer matches across immersive, interactive worlds. Play as the cunning hider or relentless seeker. Outsmart rivals, master stealth or track with precision. Non-stop action, strategy, and global fun await!',
+    category: 'Action',
+    type: 'Originals'
+  },
+  {
+    id: 41,
+    name: 'Word Search Universe',
+    image: Word_Search_Universe,
+    slug: "word_search_universe",
+    url: 'https://html5.gamemonetize.co/jo61yo9k4l15h31izc2j22mwnftauufv/',
+    description: 'Word Search Universe is a fun and relaxing puzzle game where you search for hidden words in a grid. The game has 20 chapters, and each one comes with easy, medium, and hard levels to match your skill. In every level, you need to find 6 hidden words. If you get stuck, you can use a hint to help you out. Its a great way to have fun, improve your vocabulary, and keep your brain sharp!',
+    category: 'Action',
+    type: 'Originals'
+  },
+  {
+    id: 42,
+    name: 'Birdy Trip',
+    image: Birdy_Trip,
+    slug: "birdy_trip",
+    url: 'https://html5.gamemonetize.co/7vbrf8hq727ee3rcqhgd0v2zpi8bdigr/',
+    description: 'You are not alone in the sky! It’s time to migrate to sunny lands. Grab your cute friends on the way and be careful, many dangers could smash you during your journey. Features: • One-Touch control • Enjoy an original atmosphere & colorful graphics • Discover & catch more than 8 birds • Complete dozens of missions • Beware of eagles!',
+    category: 'Action',
+    type: 'Originals'
+  },
+  {
+    id: 43,
+    name: 'Super Ball Juggling Remix',
+    image: Super_Ball_Juggling_Remix,
+    slug: "super_ball_juggling_remix",
+    url: 'https://html5.gamemonetize.co/ocuawximv8s4omrwf7t8linvh4lsl9u5/',
+    description: 'Super Ball Juggling Remix is a fast-paced arcade game where you juggle a soccer ball without letting it drop — but with a twist! Travel across iconic locations like Paris, New York, Rome, Pisa, and Sydney, showcasing your freestyle skills in stunning backdrops. Simple to play, hard to master, and packed with global style — how long can you keep the ball in the air?',
+    category: 'Action',
+    type: 'Originals'
+  },
+
 ];

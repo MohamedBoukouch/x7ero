@@ -60,8 +60,9 @@ const Sidebar = ({ isOpen, onClose }) => {
     <div className={`
       fixed inset-y-0 left-0 z-50 bg-gray-800 shadow-lg
       transition-all duration-300 ease-in-out
-      ${isOpen ? 'translate-x-0 w-64' : '-translate-x-full md:translate-x-0 md:w-16 hover:md:w-64'}
+      ${isOpen ? 'translate-x-0 w-64' : '-translate-x-full md:translate-x-0 md:w-19 hover:md:w-64'}
       group
+      overflow-y-auto  // Add this to enable scrolling
     `}>
       {/* Header - Only visible on mobile */}
       <div className="flex items-center justify-between p-4 border-b border-gray-700 md:hidden">
