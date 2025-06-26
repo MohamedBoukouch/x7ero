@@ -42,6 +42,21 @@ import Word_Search_Universe  from '../assets/games/Word_Search_Universe.jpg';
 import Birdy_Trip from '../assets/games/Birdy_Trip.jpg';
 import Super_Ball_Juggling_Remix  from '../assets/games/Super_Ball_Juggling_Remix.jpg';
 
+import Tennis_Dash  from '../assets/games/Tennis_Dash.jpg';
+import Arcade_Pong_Deluxe  from '../assets/games/Arcade_Pong_Deluxe.jpg';
+import Underwater_Aim  from '../assets/games/Underwater_Aim.jpg';
+import College_Basketball_Games_Today  from '../assets/games/College_Basketball_Games_Today.jpg';
+import Football_Manager_Simulator  from '../assets/games/Football_Manager_Simulator.jpg';
+import Tiny_Billiard  from '../assets/games/Tiny_Billiard.jpg';
+import Baseball_Star  from '../assets/games/Baseball_Star.jpg';
+import Ring_Master_Legends  from '../assets/games/Ring_Master_Legends.jpg';
+import Bow_Masters_Arena from '../assets/games/Bow_Masters_Arena.jpg';
+import Power_Puncher from '../assets/games/Power_Puncher.jpg';
+
+
+
+
+// category : Action et Simulation et Fashion et Puzzle et Creative et Arcade et Sport
 export const games = [
   {
     id: 1,
@@ -430,7 +445,7 @@ export const games = [
     slug: "super_motocross",
     url: 'https://html5.gamemonetize.co/d8vjyjtwgj1c7opsa1e99ifmvnfvgvn8/',
     description: 'Ride your dirt bike through challenging levels full of ramps, jumps, and obstacles. Balance, accelerate, and reach the finish line without crashing! A fun and fast-paced HTML5 motocross game for all ages.',
-    category: 'Action',
+    category: 'Sport',
     type: 'Originals'
   },
   {
@@ -473,5 +488,104 @@ export const games = [
     category: 'Action',
     type: 'Originals'
   },
-
+  {
+    id: 43,
+    name: 'Tennis Dash',
+    image: Tennis_Dash,
+    slug: "tennis_dash",
+    url: 'https://html5.gamemonetize.co/h8381esputdzb7w30swugmh9aufj4lrz/',
+    description: 'Tennis Dash is a fast and fun game where a cute cat plays tennis like a pro! The tennis ball comes from different directions, and your job is to move the cat left and right to hit it. Be quick—if you miss the ball three times, the game is over! It’s easy to play but really hard to master. Try to beat your own high score and keep the rally going!',
+    category: 'Sport',
+    type: 'new'
+  },
+  {
+    id: 43,
+    name: 'Arcade Pong Deluxe',
+    image: Arcade_Pong_Deluxe,
+    slug: "arcade_pong_deluxe",
+    url: 'https://html5.gamemonetize.co/f15sddte014o8cumjvx9oy0n3puiapn7/',
+    description: 'Arcade Pong Deluxe: Classic arcade action reborn! Challenge smart AI, enjoy full-screen play, responsive controls, and customizable sound. Dive into retro fun!',
+    category: 'Sport',
+    type: 'new'
+  },
+  {
+    id: 43,
+    name: 'Underwater Aim',
+    image: Underwater_Aim,
+    slug: "underwater_aim",
+    url: 'https://html5.gamemonetize.co/hksjgjkch7vvkjnpwboj6noif3qm8osd/',
+    description: 'Underwater Aim dives deep into the classic 8-ball pool experience—now with a refreshing underwater twist! Challenge your skills in beautifully designed ocean-themed tables where every shot feels smooth and satisfying. Line up your cue, calculate the angles, and sink all your balls before your opponent in this immersive pool game. From shimmering jellyfish lights to coral-lined pockets, each level is bursting with aquatic charm. Play solo, challenge friends, or compete in underwater tournaments. Unlock cues, explore sea-themed arenas, and become the ultimate pool shark of the deep. Cue up and make a splash in Underwater Aim!',
+    category: 'Sport',
+    type: 'new'
+  },
+  {
+    id: 43,
+    name: 'College Basketball Games Today',
+    image: College_Basketball_Games_Today,
+    slug: "college_basketball_games_today",
+    url: 'https://html5.gamemonetize.co/red1ovg6fjny2ulquxvt4y3ah0xby91y/',
+    description: 'College Basketball Games Today is the ultimate arcade-style college basketball game for fans who love fast-paced sports action! Play solo or challenge a friend in the exciting 2-player basketball mode. With fun cartoon graphics and characters inspired by legendary basketball players, this game offers a thrilling mix of dunks, 3-pointers, and buzzer-beaters. Perfect for quick matches or full tournaments, its the ideal basketball game for kids and adults alike. Whether playing a quick match or climbing the ranks, College Basketball Games Today brings classic basketball arcade gameplay with a modern twist. Get ready to hit the court.',
+    category: 'Sport',
+    type: 'new'
+  },
+  {
+    id: 43,
+    name: 'Football Manager Simulator',
+    image: Football_Manager_Simulator,
+    slug: "football_manager_simulator",
+    url: 'https://html5.gamemonetize.co/tf0usn5yp3zl9e70xl8qhspky9k8qvx5/',
+    description: 'In this new era, all national leagues have been removed and now all teams play in 4 international divisions! Have you ever thought of creating and managing a club? Create your own football club and lead it towards glory in Football Manager Simulator! Manage your squad, tactics, and finances, compete in leagues and climb to the top division, sign football stars and coach your players to make them better! However, the road to glory wont be easy... Youll need to earn the money for coaching, signing players, and academy scouting. Upgrade your stadium to win more money on home matches and get sponsors to earn crucial amounts of money!',
+    category: 'Sport',
+    type: 'new'
+  },
+  {
+    id: 43,
+    name: 'Tiny Billiard',
+    image: Tiny_Billiard,
+    slug: "tiny_billiard",
+    url: 'https://html5.gamemonetize.co/c3btewong9vmfv2tgd58mds3rua8csnb/',
+    description: 'Tiny Billiard is the ultimate mini pool game – fast, fun, and full of color! Dive into quick matches with smooth one-touch controls and challenge yourself with crazy trick shots. Unlock a variety of fun cues, each with its own style and effects. Whether youre a casual player or a billiard pro, Tiny Billiard offers addictive gameplay in a cute 2D cartoon world. Perfect for all ages!',
+    category: 'Sport',
+    type: 'new'
+  },
+  {
+    id: 43,
+    name: 'Baseball Star',
+    image: Baseball_Star,
+    slug: "baseball_star",
+    url: 'https://html5.gamemonetize.co/lz24q5j25atdbwmkfy9r04cig938m8f9/',
+    description: 'Baseball Star is a fun casual sports game that lets you feel the excitement and joy of playing baseball. As a star on the field. Swing the bat and hitting the ball. Hit the ball with precision. It’s easy to start. But the challenges will get harder.',
+    category: 'Sport',
+    type: 'new'
+  },
+  {
+    id: 43,
+    name: 'Ring Master Legends',
+    image: Ring_Master_Legends,
+    slug: "ring_master_legends",
+    url: 'https://html5.gamemonetize.co/spfuv2y132wi7j1qdrdv77zztly1huvp/',
+    description: 'Ring Master Legends is an action-packed boxing game that tests your speed, reflexes, and precision! Step into the ring and punch your way to victory by matching your gloves to the falling balls—use the Red glove for red balls and the Blue glove for blue balls. The more accurate your hits, the higher your score! With fast-paced gameplay, dynamic animations, and increasing difficulty, Ring Master Legends will keep you on your toes as you strive for the ultimate high score. Do you have what it takes to become a true legend of the ring? Step in, gear up, and start punching!',
+    category: 'Sport',
+    type: 'new'
+  },
+  {
+    id: 43,
+    name: 'Bow Masters Arena',
+    image: Bow_Masters_Arena,
+    slug: "bow_masters_arena",
+    url: 'https://html5.gamemonetize.co/7gmrptnujb86szaxdideuock4g6ayc3f/',
+    description: 'Become the Ultimate Archer in Bow Masters Arena! Are you ready to test your archery skills and compete against AI archers? Bow Masters Arena is the ultimate archery showdown where precision, strategy, and quick reflexes determine the champion. Train hard, master your shots, and enter thrilling battles against AI-controlled opponents to prove you are the best archer! How to Play? Train Your Skills – Perfect your aim and timing in practice mode. Compete in AI Tournaments – Face off against intelligent AI archers in high-stakes duels. Unlock Powerful Bows – Upgrade your weapons for more accuracy and strength.',
+    category: 'Sport',
+    type: 'new'
+  },
+  {
+    id: 43,
+    name: 'Power Puncher',
+    image: Power_Puncher,
+    slug: "power_puncher",
+    url: 'https://html5.gamemonetize.co/b1bs81bovd287yxmsx5af8vms6awdnm6/',
+    description: 'Power Puncher is a thrilling arcade game that puts your punching power to the test. As a skilled boxer, your mission is to survive a barrage of wooden boxes by expertly smashing them to pieces. How to Play: Time Your Punches: Carefully watch as wooden boxes of varying sizes and shapes approach you. Aim for the Center: Target the center of each box to deliver the most powerful blow. Avoid Sharp Edges: Dodge the sharp edges of the boxes to prevent injury. Chain Combos: Land consecutive punches to increase your score and unlock special power-ups.',
+    category: 'Sport',
+    type: 'new'
+  },
 ];
