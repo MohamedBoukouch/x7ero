@@ -52,6 +52,11 @@ import Baseball_Star  from '../assets/games/Baseball_Star.jpg';
 import Ring_Master_Legends  from '../assets/games/Ring_Master_Legends.jpg';
 import Bow_Masters_Arena from '../assets/games/Bow_Masters_Arena.jpg';
 import Power_Puncher from '../assets/games/Power_Puncher.jpg';
+import Tung_Tung_Sahur_Supermarket from '../assets/games/Tung_Tung_Sahur_Supermarket.jpg';
+import Data_Breach from '../assets/games/Data_Breach.jpg';
+import Spirit_Boy from '../assets/games/Spirit_Boy.jpg';
+import Cosmic_Strike from '../assets/games/Cosmic_Strike.jpg';
+import Super_Mano_Run_Blast_and_Slash from '../assets/games/Super_Mano_Run_Blast_and_Slash.jpg';
 
 
 
@@ -587,5 +592,55 @@ export const games = [
     description: 'Power Puncher is a thrilling arcade game that puts your punching power to the test. As a skilled boxer, your mission is to survive a barrage of wooden boxes by expertly smashing them to pieces. How to Play: Time Your Punches: Carefully watch as wooden boxes of varying sizes and shapes approach you. Aim for the Center: Target the center of each box to deliver the most powerful blow. Avoid Sharp Edges: Dodge the sharp edges of the boxes to prevent injury. Chain Combos: Land consecutive punches to increase your score and unlock special power-ups.',
     category: 'Sport',
     type: 'new'
+  },
+  {
+    id: 44,
+    name: 'Tung Tung Sahur Supermarket',
+    image: Tung_Tung_Sahur_Supermarket,
+    slug: "tung_tung_sahur_supermarket",
+    url: 'https://html5.gamemonetize.co/wtv21hm84crp7qcztjsvkl5tuxa1uwzk/',
+    description: 'Tung Tung Sahur has started running a supermarket. He got a job as a cashier in a busy store. Italian brainrot characters come to shop, but don’t let them make a mess! Clean the floor immediately to keep the store spotless. You also need to manage the cash register—don’t keep customers waiting too long. Make sure to scan every item’s barcode to track how many products leave the store. If the shelves start to empty, use the money you’ve earned to restock from the storage room.',
+    category: 'Aventure',
+    type: 'recommande'
+  },
+  {
+    id: 45,
+    name: 'Data Breach',
+    image: Data_Breach,
+    slug: "data_breach",
+    url: 'https://html5.gamemonetize.co/r85hwpgbjc07uasm61ypwqqd6fgq40fr/',
+    description: 'Youre a Computer Virus, are you strong enough to avoid every scanner the antivirus throws at you? Lets find out in Data Breach!',
+    category: 'Aventure',
+    type: 'recommande'
+  },
+  {
+    id: 46,
+    name: 'Spirit Boy',
+    image: Spirit_Boy,
+    slug: "spirit_boy",
+    url: 'https://html5.gamemonetize.co/1q6swhq95j9i4olu3luuea72ocg1ornl/',
+    description: 'In this clever puzzle adventure, you guide a boy through tricky levels filled with deadly traps and clever challenges. Spirit Boy transforms into a ghostly soul when faced with danger, letting him float past spikes and reach hidden areas. But to finish the level, he must return to his human form and find the exit door all while guarding his three precious lives.',
+    category: 'Aventure',
+    type: 'recommande'
+  },
+  {
+    id: 47,
+    name: 'Cosmic Strike 2.0',
+    image: Cosmic_Strike,
+    slug: "cosmic_strike",
+    url: 'https://html5.gamemonetize.co/fukc1o594u4o3turx87lvd2tqk1shhmm/',
+    description: 'A game where you can explore space and battle spaceships. Come on, head into space and fight against extremely tough bosses. What happened, are you scared? There are 3 long levels in the game and each level has a boss with its own different gameplay. As you destroy enemies and bosses, you earn money and can buy new ships. Each ships different damage and firing style make the game different. And last boss is not broken it has a weak spot.',
+    category: 'Aventure',
+    type: 'recommande'
+  },
+  {
+    id: 48,
+    name: 'Super Mano Run Blast and Slash',
+    image: Super_Mano_Run_Blast_and_Slash,
+    slug: "super_mano_run_blast_and_slash",
+    url: 'https://html5.gamemonetize.co/z135u2wpcnbuxz820lfv631trrkcrhz1/',
+    description: 'Join Super Mano in a high-octane, Mario-inspired adventure where action meets strategy! Armed with guns, swords, and explosive bombs, Mano must battle waves of quirky enemies, overcome tricky traps, and defeat the forces of evil threatening his colorful pixel world. This side-scrolling platformer combines nostalgic retro charm with thrilling combat mechanics. Whether you’re jumping on platforms or blasting through bosses, Super Mano delivers non-stop arcade-style fun for gamers of all ages!',
+    category: 'Aventure',
+    type: 'recommande'
   },
 ];
